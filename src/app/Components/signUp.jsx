@@ -1,9 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import { CiLock } from "react-icons/ci";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false)
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword)
+  }
   return (
     <div className="col-md-6 mx-auto">
       <div className="text-center mb-4">
@@ -39,26 +47,27 @@ const SignUp = () => {
         </div>
 
         <div className="mb-3">
-          <div className="input-group">
-            <input
-              type="password"
-              className="form-control"
-              id="exampleFormControlInput2"
-              placeholder="Password"
-            />
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              id="togglePassword"
-            >
-              <i className="bi bi-eye-slash" id="toggleIcon"></i>
-            </button>
-          </div>
+        <div className="input-group">
+        <input
+          type={showPassword ? 'text' : 'password'}
+          className="form-control"
+          id="exampleFormControlInput2"
+          placeholder="Password"
+        />
+        <button
+          className="btn btn-outline-secondary"
+          type="button"
+          id="togglePassword"
+          onClick={togglePasswordVisibility}
+        >
+         {showPassword ? <FaEye /> : <FaEyeSlash />}
+        </button>
+      </div>
         </div>
         <p className="text-end text-sm ">password strength</p>
 
         <div className="mb-3 d-flex justify-content-between">
-          <p className="text-sm">
+          <p style={{ fontSize: '0.75rem' }} >
             by continuing you agree to our Term and services and privacy policy
           </p>
         </div>

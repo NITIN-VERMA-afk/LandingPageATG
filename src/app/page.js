@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/signUp";
@@ -57,22 +58,25 @@ export default function Home() {
 
   return (
     <main className="container">
-      <div style={{backgroundColor:"#F7F5F9",marginTop:"30px"}} className="row">
-        <section  className="col-md-6">
+      <div
+        style={{ backgroundColor: "#F7F5F9", marginTop: "30px" }}
+        className="row"
+      >
+        <section className="col-md-6">
           <div>
-            <h1 style={{fontStyle:"italic",font:"bold"}}>
+            <h1 style={{ fontStyle: "italic", font: "bold" }}>
               Explore your <span className="text-primary">hobby</span> or
               <span className="text-purple"> passion</span>
             </h1>
           </div>
-          <article style={{marginTop:"10%"}}>
+          <article style={{ marginTop: "10%" }}>
             Sign-in to interact with a community of fellow hobbyists and an
             eco-system of experts, teachers, suppliers, classes, workshops, and
             places to practice, participate or perform. Your hobby may be about
             visual or performing arts, sports, games, gardening, model making,
             cooking, indoor or outdoor activities…
           </article>
-          <article style={{marginTop:"5%"}}>
+          <article style={{ marginTop: "5%" }}>
             If you are an expert or a seller, you can Add your Listing and
             promote yourself, your students, products, services or events. Hop
             on your hobbyhorse and enjoy the ride.
@@ -89,7 +93,10 @@ export default function Home() {
         </section>
         <section className="col-md-6">
           <div className="d-flex flex-column gap-2">
-            <div className="d-flex justify-content-start gap-2" style={{marginLeft:"90px"}}>
+            <div
+              className="d-flex justify-content-start gap-2"
+              style={{ marginLeft: "90px" }}
+            >
               <p
                 onClick={() => setIsSignIn(true)}
                 style={{
@@ -121,11 +128,10 @@ export default function Home() {
         </section>
       </div>
       {/* listing section start from here */}
-      <section style={{marginTop:"100px"}}>
+      <section style={{ marginTop: "100px" }}>
         <div class="container">
           <div class="row justify-content-start">
             <div class="col-md-12 ">
-              
               <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
                 {cardData.map((item) => (
                   <div key={item.id} className="col">
@@ -145,9 +151,9 @@ export default function Home() {
       </section>
       {/* add new list section start here */}
       <section>
-        <div style={{marginTop:"10%"}} className="container">
+        <div style={{ marginTop: "10%" }} className="container">
           <div className="row">
-            <div style={{padding:"3%"}} className="border border-primary">
+            <div style={{ padding: "3%" }} className="border border-primary">
               <p>
                 {" "}
                 <FaPlus /> add your own
@@ -157,16 +163,22 @@ export default function Home() {
                 venue or event tickets? Or, you know someone who should be on
                 hobbycue? Go ahead and Add your Own page{" "}
               </p>
-              <button className="btn border-primary">Add new</button>
+              <button className="btn border-primary">
+                {" "}
+                <Link href="/listing"> Add new </Link>{" "}
+              </button>
             </div>
           </div>
         </div>
       </section>
       {/* testmonials section start here */}
       <section>
-        <div style={{backgroundColor:"#F7F5F9",marginTop:"10%"}} className="container mt-12">
+        <div
+          style={{ backgroundColor: "#F7F5F9", marginTop: "10%" }}
+          className="container mt-12"
+        >
           <div className="row">
-            <div style={{padding:'3%'}}>
+            <div className="col-12" style={{ padding: "3%" }}>
               <h3>
                 {" "}
                 <span>"</span> testmonials
@@ -184,34 +196,34 @@ export default function Home() {
                 various hobbies and activities in my city, all under one roof,
                 is an excellent idea and I highly recommend it.
               </p>
-
-              <div className=" d-flex align-items-center gap-5">
-                <div className="">
+              <div className="d-flex flex-column flex-md-row align-items-center justify-content-between gap-5">
+                <div className="d-flex justify-content-center">
                   <Image
                     src="/images/Audio Track.png"
                     width={800}
                     height={100}
                     alt="subha nagarajan"
-                    // layout="responsive"
+                    layout="responsive"
+                    className="img-fluid"
                   />
                 </div>
-                <div className="d-flex" style={{marginRight:'5%'}}>
+                <div
+                  className="d-flex flex-column flex-sm-row align-items-center"
+                  style={{ marginRight: "5%" }}
+                >
                   <Image
                     src="/images/subhaNaga.png"
                     width={85}
                     height={85}
                     alt="subha nagarajan"
                     layout="responsive"
-
-
+                    className="mb-2 mb-sm-0 mr-sm-3"
                   />
-                  <span> <p>SubhaNagarajan</p>
-                   <br/>
-                  <p >ClassicalDancer</p> </span>
-                   
-                 
+                  <div>
+                    <p className="mb-0">SubhaNagarajan</p>
+                    <p className="mb-0">ClassicalDancer</p>
+                  </div>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -220,7 +232,7 @@ export default function Home() {
 
       {/* get starting section start here */}
 
-      <section style={{marginTop:"10px"}}>
+      <section style={{ marginTop: "10px" }}>
         <div>
           <Image
             src="/images/End.png"

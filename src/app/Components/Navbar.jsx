@@ -37,9 +37,9 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <form className="d-flex mx-auto my-2 my-lg-0" role="search">
+            <form className="d-flex flex-row justify-content-start mx-auto my-2 my-lg-0" role="search">
               <input
-                className="form-control me-2"
+                className="form-control "
                 type="search"
                 placeholder="Search here ..."
                 aria-label="Search"
